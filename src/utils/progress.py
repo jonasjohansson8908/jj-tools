@@ -16,11 +16,13 @@ def update_progress(progress, msg_pre='', msg_post='', scaling=1):
         msg_pre (str), optional: Message that if provided, will be shown before the
                                  progress bar.
     """
-    # limit the progress to 0-100%
+    # limit the progress to 0-100% and round to integer number
     if progress > 100:
         progress = 100
     elif progress < 0:
         progress = 0
+    else:
+        progress = round(progress)
 
     # force scaling to integer value
     if scaling < 1:
