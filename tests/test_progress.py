@@ -43,6 +43,11 @@ def test_progress_bar(capsys):
     captured = capsys.readouterr()
     assert captured.out == ('\r [##########] 100% ')
 
+    # test scaling < 1
+    update_progress(50, scaling=0.2)
+    captured = capsys.readouterr()
+    assert captured.out == ('\r [#####-----] 50% ')
+
     # test scaled progress bar
     update_progress(70, scaling=2)
     captured = capsys.readouterr()
