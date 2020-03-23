@@ -37,15 +37,3 @@ def update_progress(progress, msg_pre='', msg_post='', scaling=1):
     # print the progress bar
     print('\r{0} [{1}] {2}% {3}'.format(msg_pre, '#' * n_filled + '-' * n_empty,
                                         progress, msg_post), end='')
-
-def main():
-    """ Main method to run an example of the progress bar.
-    """
-    for progress in range(0, 110, 5):
-        update_progress(progress, scaling=3, msg_pre="installing software:", msg_post="done")
-        time.sleep(0.3)
-    print("\nInstallation complete!")
-
-
-if __name__ == "__main__":
-    main()
