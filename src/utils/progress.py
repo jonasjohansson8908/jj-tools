@@ -5,8 +5,6 @@
     Author: Jonas Johansson, jonasjo5@kth.se
 """
 
-import time
-
 def update_progress(progress, msg_pre='', msg_post='', scaling=1):
     """Formats and prints the progress as a progress bar to stdout.
 
